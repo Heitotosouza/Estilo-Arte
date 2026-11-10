@@ -1,1 +1,142 @@
+Aqui está o código do arquivo index.html pronto para você copiar:
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Estilo & Ponto - Projeto Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-shirt"></i>
+            <span>Estilo & Ponto</span>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#" id="nav-produtos" class="active" onclick="navegarPara('produtos')">Produtos</a></li>
+                <li><a href="#" id="nav-sobre" onclick="navegarPara('sobre')">Sobre Nós</a></li>
+                <li><a href="#" id="nav-contato" onclick="navegarPara('contato')">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="carrinho-btn" onclick="toggleCarrinho()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="page-produtos" class="page active">
+            <div class="banner">
+                <h2>Coleção 2026</h2>
+                <p>Moda masculina, feminina e infantil com o melhor preço para o seu dia a dia.</p>
+            </div>
+          
+            <div class="categorias-bar">
+                <button class="filter-btn active" onclick="filtrarProdutos('todos')">Todos</button>
+                <button class="filter-btn" onclick="filtrarProdutos('masculino')"><i class="fa-solid fa-mars"></i> Masculino</button>
+                <button class="filter-btn" onclick="filtrarProdutos('feminino')"><i class="fa-solid fa-venus"></i> Feminino</button>
+                <button class="filter-btn" onclick="filtrarProdutos('infantil')"><i class="fa-solid fa-child"></i> Infantil</button>
+            </div>
+
+            <div class="produtos-grid" id="produtos-container">
+            </div>
+        </section>
+
+        <section id="page-sobre" class="page">
+            <div class="sobre-container">
+                <h2>Sobre a Estilo & Ponto</h2>
+                <p class="subtitle">Conheça um pouco mais sobre a nossa história e compromisso.</p>
+                
+                <div class="sobre-content">
+                    <div class="sobre-card">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Nossa Missão</h3>
+                        <p>Trazer roupas confortáveis, modernas e com preços acessíveis para toda a família, unindo estilo e praticidade.</p>
+                    </div>
+
+                    <div class="sobre-card">
+                        <i class="fa-solid fa-heart"></i>
+                        <h3>Nossos Valores</h3>
+                        <p>Respeito aos clientes, qualidade nos materiais, atendimento atencioso e compromisso com o bem-estar de quem veste nossas peças.</p>
+                    </div>
+
+                    <div class="sobre-card">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Projeto Escolar</h3>
+                        <p>Este site foi desenvolvido como um projeto prático escolar para demonstrar a criação de uma estrutura funcional de e-commerce visualmente organizada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <section id="page-contato" class="page">
+            <div class="contato-container">
+                <h2>Fale Conosco</h2>
+                <p class="subtitle">Tem alguma dúvida ou sugestão? Envie uma mensagem para a nossa equipe!</p>
+
+                <form id="form-contato" onsubmit="enviarMensagem(event)">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                </form>
+
+                <div id="contato-sucesso" class="mensagem-sucesso" style="display: none;">
+                    <i class="fa-solid fa-circle-check"></i> Sua mensagem foi enviada com sucesso!
+                </div>
+            </div>
+        </section>
+
+    </main>
+  
+    <div id="carrinho-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-cart-shopping"></i> Meu Carrinho</h3>
+                <span class="close-btn" onclick="toggleCarrinho()">&times;</span>
+            </div>
+            
+            <div class="modal-body" id="carrinho-itens">
+              
+            </div>
+
+            <div class="modal-footer">
+                <div class="total-container">
+                    <span>Total:</span>
+                    <strong id="carrinho-total">R$ 0,00</strong>
+                </div>
+                <button class="btn-primary" onclick="finalizarCompra()">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Produto adicionado ao carrinho!</div>
+
+    <footer>
+        <p>&copy; 2026 Estilo & Ponto — Projeto Escolar de Desenvolvimento Web</p>
+    </footer>
+  
+    <script src="js/script.js"></script>
+</body>
+</html>
+
 
